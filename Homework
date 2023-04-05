@@ -1,0 +1,22 @@
+enum class Gender {
+    MALE,
+    FEMALE,
+    OTHER
+}
+
+data class Person(val first_name: String, val age: Int, val gender: Gender)
+
+class Family(val you: Person, val family_member: Person) {
+    companion object Population {
+        val total = 4 
+        val kids = 2 
+    }
+}
+
+fun main() {
+    val you = Person("Jayden", 13, Gender.MALE)
+    val family_member = Person("Daisy", 10, Gender.FEMALE)
+    val family = Family(you, family_member)
+    println("Total population: ${Family.total}")
+    println("Number of kids: ${Family.kids}")
+}
